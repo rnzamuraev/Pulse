@@ -1,0 +1,26 @@
+.arrow-up {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: 0.5s all;
+  img {
+    width: 100%;
+  }
+  &__white {
+    transition: 0.5s all;
+    display: none;
+  }
+  &:hover {
+    background-color: $red;
+    .arrow-up__red {
+      display: none;
+    }
+    .arrow-up__white {
+      display: block;
+    }
+  }
+}

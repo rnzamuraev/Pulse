@@ -1,0 +1,98 @@
+.carousel {
+  position: relative;
+  padding: 80px 0;
+  &__inner {
+    margin: 0 auto;
+    max-width: 750px;
+    position: relative;
+  }
+  &__image {
+    height: 422px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    img {
+      height: 100%;
+    }
+  }
+  &__dots {
+    display: none;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  &__dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: $grey;
+    border-radius: 50%;
+    display: inline-block;
+    &.active,
+    &:hover {
+      background-color: $red;
+    }
+  }
+  &__nav {
+    position: absolute;
+    border: none;
+    background-color: $white;
+    top: 50%;
+    transform: translateY(-50%);
+    &-right {
+      right: -70px;
+    }
+    &-left {
+      left: -70px;
+    }
+  }
+}
+// .carousel__controls {
+//   padding-top: 1rem;
+//   text-align: center;
+// }
+
+@media (max-width: 992px) {
+  .carousel {
+    &__inner {
+      max-width: 590px;
+    }
+    &__image {
+      height: 330px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    &__dots {
+      display: block;
+    }
+    &__nav {
+      height: 100%;
+      background-color: rgba($color: $white, $alpha: 0.5);
+      &-right {
+        right: 0px;
+      }
+      &-left {
+        left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    &__image {
+      height: 240px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    &__image {
+      height: 160px;
+    }
+  }
+}
