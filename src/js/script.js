@@ -3,11 +3,13 @@ window.addEventListener("DOMContentLoaded", function () {
     tabs = require("./parts/tabs"),
     modal = require("./parts/modal"),
     valideForm = require("./parts/valideform"),
-    scrollUp = require("./parts/scroll-ap");
+    smoothScroll = require("./parts/smooth-scroll"),
+    arrowUpAnimate = require("./parts/arrowUpAnimate");
 
   slider();
   tabs();
   modal();
   valideForm();
-  scrollUp();
+  smoothScroll();
+  arrowUpAnimate();
 });

@@ -1,6 +1,27 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/parts/arrowUpAnimate.js":
+/*!****************************************!*\
+  !*** ./src/js/parts/arrowUpAnimate.js ***!
+  \****************************************/
+/***/ ((module) => {
+
+function arrowUpAnimate() {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1200) {
+      $(".arrow-up").fadeIn();
+    } else {
+      $(".arrow-up").fadeOut("slow");
+    }
+  });
+}
+
+module.exports = arrowUpAnimate;
+
+
+/***/ }),
+
 /***/ "./src/js/parts/modal.js":
 /*!*******************************!*\
   !*** ./src/js/parts/modal.js ***!
@@ -27,32 +48,6 @@ function modal() {
 
 module.exports = modal;
 
-
-/***/ }),
-
-/***/ "./src/js/parts/scroll-ap.js":
-/*!***********************************!*\
-  !*** ./src/js/parts/scroll-ap.js ***!
-  \***********************************/
-/***/ ((module) => {
-
-function scrollUp() {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 1200) {
-        $(".arrow-up").fadeIn();
-      } else {
-        $(".arrow-up").fadeOut("slow");
-      }
-    });
-
-    $("a[href=#up]").click(function () {
-      const _href = $(this).attr("href");
-      $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
-      return false;
-    });
-}
-
-module.exports = scrollUp;
 
 /***/ }),
 
@@ -160,6 +155,34 @@ function slider() {
 }
 
 module.exports = slider;
+
+
+/***/ }),
+
+/***/ "./src/js/parts/smooth-scroll.js":
+/*!***************************************!*\
+  !*** ./src/js/parts/smooth-scroll.js ***!
+  \***************************************/
+/***/ ((module) => {
+
+function smoothScroll() {
+  const anchors = document.querySelectorAll('a[href*="#"]');
+
+  for (let anchor of anchors) {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const blockID = anchor.getAttribute("href").substr(1);
+
+      document.getElementById(blockID).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+}
+
+module.exports = smoothScroll;
 
 
 /***/ }),
@@ -304,13 +327,15 @@ window.addEventListener("DOMContentLoaded", function () {
     tabs = __webpack_require__(/*! ./parts/tabs */ "./src/js/parts/tabs.js"),
     modal = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js"),
     valideForm = __webpack_require__(/*! ./parts/valideform */ "./src/js/parts/valideform.js"),
-    scrollUp = __webpack_require__(/*! ./parts/scroll-ap */ "./src/js/parts/scroll-ap.js");
+    smoothScroll = __webpack_require__(/*! ./parts/smooth-scroll */ "./src/js/parts/smooth-scroll.js"),
+    arrowUpAnimate = __webpack_require__(/*! ./parts/arrowUpAnimate */ "./src/js/parts/arrowUpAnimate.js");
 
   slider();
   tabs();
   modal();
   valideForm();
-  scrollUp();
+  smoothScroll();
+  arrowUpAnimate();
 });
 
 })();
