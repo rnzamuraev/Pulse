@@ -133,18 +133,27 @@
     <div class="carousel">
         <div class="container">
             <div class="carousel__inner">
-                <img class="carousel__image fade" src="img/slider/slide-1.png" alt="slide__picture">
+                <div class="carousel__images">
+                    <img class="carousel__image fade" src="img/slider/slide-1.png" alt="slide__picture">
+                </div>
+                <div class="carousel__images">
+                    <img class="carousel__image fade" src="img/slider/slide-2.png" alt="slide__picture">
+                </div>
+                <div class="carousel__images">
+                    <img class="carousel__image fade" src="img/slider/slide-3.png" alt="slide__picture">
+                </div>
+
 
                 <div class="carousel__controls">
                     <div class="carousel__dots">
-                        <span class="carousel__dot active" onclick="changeIndex(0)"></span>
-                        <span class="carousel__dot" onclick="changeIndex(1)"></span>
-                        <span class="carousel__dot" onclick="changeIndex(2)"></span>
+                        <span class="carousel__dot active"></span>
+                        <span class="carousel__dot"></span>
+                        <span class="carousel__dot"></span>
                     </div>
-                    <button class="carousel__nav carousel__nav-left" onclick="nextIndex(-1)">
+                    <button class="carousel__nav carousel__nav-left">
                         <img src="icons/slider/chevron_left_solid.svg" alt="chevron left solid">
                     </button>
-                    <button class="carousel__nav carousel__nav-right" onclick="nextIndex(1)">
+                    <button class="carousel__nav carousel__nav-right">
                         <img src="icons/slider/chevron_right_solid.svg" alt="chevron right solid">
                     </button>
                 </div>
@@ -693,7 +702,7 @@
     <script src="jquery.maskedinput.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bundle.js"></script>
 </body>
 
 </html>

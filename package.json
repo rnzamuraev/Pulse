@@ -1,7 +1,6 @@
 {
   "name": "bootstrap",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +15,18 @@
     "gulp-cli": "^2.3.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.49.9"
-  }
+    "lodash": "^4.17.21",
+    "sass": "^1.49.9",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnzamuraev/Pulse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rnzamuraev/Pulse/issues"
+  },
+  "homepage": "https://github.com/rnzamuraev/Pulse#readme",
+  "description": ""
 }
